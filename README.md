@@ -10,7 +10,7 @@ I hope to help you.
 ----------------
 ## Install
 
-Copy the `phpunit` folder to your system and enter the command promp in the command promp
+Copy the `phpunit` folder to your system and enter this command in the command promp
 ```
 composer install
 ```
