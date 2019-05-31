@@ -6,6 +6,9 @@ require(dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_
 use PHPUnit\Framework\TestCase;
 use TDD\Receipt;
 
+/**
+ * @property Receipt Receipt
+ */
 class ReceiptTest extends TestCase
 {
     public function setUp()
@@ -17,10 +20,13 @@ class ReceiptTest extends TestCase
     {
         unset($this->Receipt);
     }
+
     /**
      * @dataProvider providerTotal
+     * @param $items
+     * @param $expected
      */
-    public function testSubtotalotal($items, $expected)
+    public function testSubtotal($items, $expected)
     {
         $coupon = null;
         $output = $this->Receipt->subtotal($items, $coupon);
@@ -30,6 +36,7 @@ class ReceiptTest extends TestCase
             "When summing the total shoud be equal {$expected}"
         );
     }
+
     public function providerTotal()
     {
         return [
@@ -39,7 +46,7 @@ class ReceiptTest extends TestCase
         ];
     }
 
-    public function testTotalAndCopoun()
+    public function testTotalAndCoupon()
     {
         $input = [0,2,5,8];
         $coupon = 0.20;
@@ -96,6 +103,9 @@ class ReceiptTest extends TestCase
 
     /**
      * @dataProvider    provideCurrencyAmt
+     * @param $items
+     * @param $expected
+     * @param $msg
      */
     public function testCurrencyAmt($items, $expected, $msg)
     {
