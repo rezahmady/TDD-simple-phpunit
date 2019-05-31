@@ -1,0 +1,8 @@
+#ignore folder named `vendor`
+vendor/
+
+#ignore folder named `idea`
+.idea/
+
+#ignore file named `composer.lock`
+composer.lock
